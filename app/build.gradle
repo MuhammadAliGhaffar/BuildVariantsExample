@@ -15,11 +15,38 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    /**
+     * Product Flavors
+     */
+    flavorDimensions "version"
+    productFlavors {
+        dev {
+            applicationIdSuffix ".dev"
+            versionNameSuffix "-dev"
+        }
+        qa {
+            applicationIdSuffix ".qa"
+            versionNameSuffix "-qa"
+        }
+        alpha {
+            applicationIdSuffix ".alpha"
+            versionNameSuffix "-alpha"
+        }
+        beta {
+//            versionNameSuffix "-beta"
+        }
+    }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true //true = have to signed apk before installing in device
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            minifyEnabled false
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
         }
     }
     compileOptions {
