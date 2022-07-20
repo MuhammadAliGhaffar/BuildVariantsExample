@@ -21,18 +21,22 @@ android {
     flavorDimensions "version"
     productFlavors {
         dev {
+            manifestPlaceholders variant: 'Dev'
             applicationIdSuffix ".dev"
             versionNameSuffix "-dev"
         }
         qa {
+            manifestPlaceholders variant: 'QA'
             applicationIdSuffix ".qa"
             versionNameSuffix "-qa"
         }
         alpha {
+            manifestPlaceholders variant: 'Alpha'
             applicationIdSuffix ".alpha"
             versionNameSuffix "-alpha"
         }
         beta {
+            manifestPlaceholders variant: 'Beta'
 //            versionNameSuffix "-beta"
         }
     }
